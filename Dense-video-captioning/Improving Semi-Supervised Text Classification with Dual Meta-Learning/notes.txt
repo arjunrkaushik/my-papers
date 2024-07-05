@@ -1,0 +1,40 @@
+Improving Semi-Supervised Text Classification with Dual Meta-Learning
+
+Link to paper - https://dl.acm.org/doi/full/10.1145/3648612
+Link to code - https://github.com/GRIT621/DML
+
+Abstract
+
+The goal of semi-supervised text classification (SSTC) is to train a model by exploring both a small number of
+labeled data and a large number of unlabeled data, such that the learned semi-supervised classifier performs
+better than the supervised classifier trained on solely the labeled samples. Pseudo-labeling is one of the most
+widely used SSTC techniques, which trains a teacher classifier with a small number of labeled examples to
+predict pseudo labels for the unlabeled data. The generated pseudo-labeled examples are then utilized to train
+a student classifier, such that the learned student classifier can outperform the teacher classifier. Nevertheless,
+the predicted pseudo labels may be inaccurate, making the performance of the student classifier degraded. The
+student classifier may perform even worse than the teacher classifier. To alleviate this issue, in this paper, we
+introduce a dual meta-learning (DML) technique for semi-supervised text classification, which improves the
+teacher and student classifiers simultaneously in an iterative manner. Specifically, we propose a meta-noise
+correction method to improve the student classifier by proposing a Noise Transition Matrix (NTM) with
+meta-learning to rectify the noisy pseudo labels. In addition, we devise a meta pseudo supervision method to
+improve the teacher classifier. Concretely, we exploit the feedback performance from the student classifier to
+further guide the teacher classifier to produce more accurate pseudo labels for the unlabeled data. In this way,
+both teacher and student classifiers can co-evolve in the iterative training process. Extensive experiments
+on four benchmark datasets highlight the effectiveness of our DML method against existing state-of-theart methods for 
+semi-supervised text classification. 
+
+Main Contributions
+
+— We propose a meta pseudo supervision method to improve the performance of the teacher
+classifier, which learns from the feedback signal of how well the student classifier performs
+on the training data by exploiting the meta learning technique. In this way, the teacher
+classifier can generate more accurate pseudo labels of the unlabeled training samples.
+— We devise a meta noise correction method to model the noise distribution of pseudo labels for
+improving the performance of the student classifier. This method leverages meta learning to
+learn meta-knowledge of underlying label distribution and thus enhances the generalization
+ability of the classifier.
+— Extensive evaluations are conducted on four benchmark corpora (i.e., AGNews, Yelp, Yahoo
+and Amazon) for semi-supervised text classification. Experimental results demonstrate that
+our DML framework achieves substantially better performance than the compared strong
+baselines, especially on the datasets with confusing class categories.
+
