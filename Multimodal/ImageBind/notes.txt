@@ -1,0 +1,26 @@
+ImageBind: One Embedding Space To Bind Them All
+
+Link to paper - https://arxiv.org/abs/2305.05665
+Link to code - https://github.com/facebookresearch/ImageBind
+
+
+Abstract
+
+We present ImageBind, an approach to learn a joint embedding across six different modalities - images, text, audio, 
+depth, thermal, and IMU data. We show that all combinations of paired data are not necessary to train such a joint
+embedding, and only image-paired data is sufficient to bind the modalities together. ImageBind can leverage recent 
+large scale vision-language models, and extends their zero-shot capabilities to new modalities just by using their 
+natural pairing with images. It enables novel emergent applications 'out-of-the-box' including cross-modal retrieval, 
+composing modalities with arithmetic, cross-modal detection and generation. The emergent capabilities improve with the 
+strength of the image encoder and we set a new state-of-the-art on emergent zero-shot recognition tasks across modalities, 
+outperforming specialist supervised models. Finally, we show strong few-shot recognition results outperforming prior work, 
+and that ImageBind serves as a new way to evaluate vision models for visual and non-visual tasks.
+
+Main Contributions
+
+- Learns a single shared representation space by leveraging multiple types of image-paired data. 
+- An emergent property is that it implicitly aligns pairs of modalities (M1, M2) even though the model is only trained 
+with pairs involving images (I). For example:
+    - The model learns to align (I, M1) and (I, M2) separately.
+    - As a result, the embeddings of M1 and M2 also become aligned in the shared space.
+- "InfoNCE Loss", useful for contrastive learning
